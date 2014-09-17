@@ -47,7 +47,7 @@ function! evervim#notesByNotebook() " {{{
     setlocal nomodifiable
     set ft=notes
 
-    map <silent> <buffer> <CR> :call evervim#getNote()<CR>
+    noremap <silent> <buffer> <CR> :call evervim#getNote()<CR>
 endfunction
 "}}}
 
@@ -59,7 +59,7 @@ function! evervim#notesByTag() " {{{
     setlocal nomodifiable
     set ft=notesbytag
 
-    map <silent> <buffer> <CR> :call evervim#getNote()<CR>
+    noremap <silent> <buffer> <CR> :call evervim#getNote()<CR>
 endfunction
 "}}}
 
@@ -100,7 +100,7 @@ function! evervim#notebookList() " {{{
     setlocal nomodifiable
     set ft=notebooks
 
-    map <silent> <buffer> <CR> :call evervim#notesByNotebook()<CR>
+    noremap <silent> <buffer> <CR> :call evervim#notesByNotebook()<CR>
 endfunction
 "}}}
 
@@ -112,7 +112,7 @@ function! evervim#evervimSearchByQuery(word) " {{{
     setlocal nomodifiable
     set ft=notesbyquery
 
-    map <silent> <buffer> <CR> :call evervim#getNote()<CR>
+    noremap <silent> <buffer> <CR> :call evervim#getNote()<CR>
 endfunction
 "}}}
 
@@ -205,7 +205,7 @@ function! evervim#listTags() " {{{
     setlocal nomodifiable
     set ft=taglists
 
-    map <silent> <buffer> <CR> :call evervim#notesByTag()<CR>
+    noremap <silent> <buffer> <CR> :call evervim#notesByTag()<CR>
 endfunction
 "}}}
 
@@ -223,8 +223,8 @@ function! evervim#listBufSetup() " {{{
         setlocal buftype=nofile
         setlocal nowrap
         setlocal nonumber
-        nmap <silent> <buffer> > :<C-u>EvervimPageNext<CR>
-        nmap <silent> <buffer> < :<C-u>EvervimPagePrev<CR>
+        nnoremap <silent> <buffer> > :<C-u>EvervimPageNext<CR>
+        nnoremap <silent> <buffer> < :<C-u>EvervimPagePrev<CR>
     endif
 endfunction
 "}}}
